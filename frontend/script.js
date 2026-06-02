@@ -1,6 +1,6 @@
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://fuzzy-penilaian-backend.vercel.app'; // Ganti dengan URL backend yang dideploy nanti
+    : 'edu-grade-f8krc7fmk-rizki-rzs-projects.vercel.app'; // Ganti dengan URL backend yang dideploy nanti
 const API = `${API_BASE}/nilai`;
 const API_SISWA = `${API_BASE}/siswa`;
 
@@ -959,7 +959,7 @@ function cancelExcelImport() {
     excelParsedData = [];
     document.getElementById('excel-preview-container').classList.add('d-none');
     document.getElementById('tbodyExcelPreview').innerHTML = '';
-    
+
     const filenameDisplay = document.getElementById('excel-filename-display');
     if (filenameDisplay) {
         filenameDisplay.innerText = '';
