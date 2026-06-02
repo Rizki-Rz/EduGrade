@@ -12,6 +12,11 @@ const siswaRoutes = require('./routes/siswaRoutes');
 app.use('/nilai', nilaiRoutes);
 app.use('/siswa', siswaRoutes);
 
-app.listen(3000, () => {
-    console.log('Server berjalan di port 3000');
-});
+const PORT = process.env.PORT || 3000;
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server berjalan di port ${PORT}`);
+    });
+}
+
+module.exports = app;
