@@ -1,6 +1,6 @@
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://edu-grade-azure.vercel.app/'; // Ganti dengan URL backend Vercel Anda nanti
+    : 'https://edu-grade-azure.vercel.app'; // Ganti dengan URL backend Vercel Anda nanti
 const API = `${API_BASE}/nilai`;
 const API_SISWA = `${API_BASE}/siswa`;
 
