@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #f8fafc;
+    --sidebar-bg: #0f172a;
+    --sidebar-hover: #1e293b;
+    --sidebar-active: #3b82f6;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+
+    /* Fuzzy Colors */
+    --color-rendah: #f43f5e;
+    --color-sedang: #f59e0b;
+    --color-tinggi: #10b981;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Dashboard Layout */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: #f8fafc;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-header {
+    padding: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+.sidebar-logo i {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 12px;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 8px;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.menu-link:hover {
+    background-color: var(--sidebar-hover);
+    color: #ffffff;
+}
+
+.menu-item.active .menu-link {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.top-navbar {
+    background-color: #ffffff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.content-body {
+    padding: 30px;
+    flex: 1;
+}
+
+/* Cards */
+.custom-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.custom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-header-custom {
+    background-color: transparent;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title-custom {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.card-body-custom {
+    padding: 24px;
+}
+
+/* Stats Cards */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 5rem;
+    opacity: 0.1;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Tables */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.custom-table {
+    margin-bottom: 0;
+}
+
+.custom-table th {
+    background-color: #f8fafc;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 16px 20px;
+}
+
+.custom-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.custom-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Predicate Badges */
+.badge-predicate {
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-baik {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.badge-cukup {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.badge-kurang {
+    background-color: #ffe4e6;
+    color: #9f1239;
+    border: 1px solid #fecdd3;
+}
+
+/* Progress Bars */
+.progress-custom {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e2e8f0;
+}
+
+/* Modal Styling */
+.modal-content-custom {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header-custom {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 24px;
+}
+
+.modal-body-custom {
+    padding: 24px;
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.35);
+    color: white;
+}
+
+.btn-primary-custom:active {
+    transform: translateY(0);
+}
+
+.btn-action {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-action-detail {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+.btn-action-detail:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-action-delete {
+    background-color: #fff1f2;
+    color: #f43f5e;
+}
+
+.btn-action-delete:hover {
+    background-color: #f43f5e;
+    color: white;
+}
+
+/* Toast styling */
+.toast-container-custom {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+/* Form Styles */
+.form-label-custom {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.form-control-custom {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.form-control-custom:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Live Preview Card */
+.preview-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+}
+
+.preview-card .card-title-custom {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar-header {
+        padding: 15px 20px;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .menu-item {
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+
+    .menu-link {
+        padding: 8px 16px;
+        white-space: nowrap;
+    }
+
+    .top-navbar {
+        display: none;
+    }
+
+    .content-body {
+        padding: 20px;
+    }
+}
+
+/* Excel Upload Zone Premium Styling */
+.excel-upload-zone {
+    border: 2px dashed #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 14px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.excel-upload-zone:hover, .excel-upload-zone-active {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.05);
+}
+
+.excel-upload-zone i {
+    transition: transform 0.25s ease;
+    color: #10b981;
+}
+
+.excel-upload-zone:hover i, .excel-upload-zone-active i {
+    transform: scale(1.1);
+}
+
+.excel-upload-zone h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.excel-upload-zone p {
+    font-size: 0.8rem;
+}
